@@ -1,0 +1,46 @@
+.key {
+  text-align: center;
+  border: 3px solid white;
+  width: 7rem;
+  height: 100px;
+  font-family: Arial;
+  margin: 1rem;
+  transition: all .07s;
+  background-color: transparent;
+  color: white;
+  background: rgb(255, 255, 255, 0.2);
+  border-radius: .5rem;
+  padding: 1rem .5rem;
+  font-size: 1rem;
+  text-shadow: 0 0 .5rem black;
+}
+
+.playing {
+  border: 5px solid rgb(230, 207, 1);
+  transform:scale(1.1);
+  box-shadow: 0.2em 0.2em gold;
+  color: rgb(230, 207, 1);
+  background: rgb(230, 207, 1, 0.2);
+}
+
+.sound {
+  display: block;
+}
+
+body {
+  background-image: url(https://images.pexels.com/photos/1105666/pexels-photo-1105666.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260);
+}
+
+.keys {
+  display: flex;
+  flex: 1;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+kbd {
+  display: block;
+  font-size: 2rem;
+  margin: 0.5rem;
+}
