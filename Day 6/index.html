@@ -35,11 +35,11 @@
       // find
       const input = event.currentTarget.querySelector('.search');
       const regex = new RegExp(input.value, 'gi');
-      const filtered_cities = cities.filter(place => place.city.match(regex) || place.state.match(regex));
+      const filteredCities = cities.filter(place => place.city.match(regex) || place.state.match(regex));
 
       // display
       const suggestions = event.currentTarget.querySelector('.suggestions');
-      const html = filtered_cities.map(place => {
+      const html = filteredCities.map(place => {
         const cityName = place.city.replace(regex, `<span class="hl">${input.value}</span>`);
         const stateName = place.state.replace(regex, `<span class="hl">${input.value}</span>`);
         // search bar: new
