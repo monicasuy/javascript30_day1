@@ -58,29 +58,31 @@ function handleProgress() {
 }
 vid.addEventListener('timeupdate', handleProgress);
 
+progressBar.addEventListener('click', (e) => {
+  const scrub = (e.offsetX / progressBar.offsetWidth) * vid.duration;
+  vid.currentTime = scrub;
+})
 
-
-//+10 and +25
-//Queryselect + Addevenet listener
-// Incremenet video.// To play the video
-// Query selector the button
-
-//AddEvent eventlistener to button. When clicked play video
-//To change volume
-//Query selector input toggle
-//Add event listener to input.  When change we increase  video sound by the increment.
-// Get video volume- Query selector video
-// Retrieve volume element from video
-//Video.sound will be equal to by the input value
-//To change the speed
-//Query selector speed input
-//Add event listener to input. When change we increase/decrease sound input value
-//Seevideo.playback to input value
-//Progress bar
-// Query selector progress bar
-//Figure out video length
-//Convert to percentage
-//Set percentage to width of the progress bar
 //+10 and +25
 //Queryselect + Addevenet listener
 // Incremenet video.
+
+const minusTen = document.querySelectorAll('.player__button')[1];
+
+minusTen.addEventListener('click', () => {
+  vid.currentTime = vid.currentTime - 10;
+})
+
+const addTwentyFive = document.querySelectorAll('.player__button')[2];
+
+addTwentyFive.addEventListener('click', () => {
+  vid.currentTime = vid.currentTime + 25;
+})
+
+function changeIcon() {
+  const icon = vid.paused ? "►" : "❚ ❚"
+  playButton.textContent = icon;
+}
+
+vid.addEventListener('play', changeIcon)
+vid.addEventListener('pause', changeIcon)
